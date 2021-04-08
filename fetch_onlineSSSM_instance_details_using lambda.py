@@ -1,12 +1,18 @@
 # References
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html
 '''
-In this file we are fetching online SSM ec2 instances
+In this file we are fetching details from online SSM EC2 instances
 who are running for less than 30 minutes and storing
 their details in S3 bucket.
-Details which we are fetching
-InstanceId, IPAddress, PingStatus,
-PlatformName, PlatformType.
+Guidelines:
+    1: Instances have SSM Agents Installed.
+    2: Instances have AmazonSSMManagedInstanceCore policy.
+    3: If you are using lambda function to call the instance
+       following policy should be attached
+       1: AmazonS3FullAccess (If Lambda funcation is storing files to bucket)
+       2: AmazonEC2ReadOnlyAccess.
+       3: AmazonSSMFullAccess.
+       4: AWSLambdaExecute  
 '''
 import json
 import boto3
