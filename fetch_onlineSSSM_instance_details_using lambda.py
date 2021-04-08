@@ -1,4 +1,6 @@
 # References
+# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_inventory_entries
+# https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-schema.html
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html
 '''
 In this file we are fetching details from online SSM EC2 instances
